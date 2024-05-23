@@ -1,0 +1,5 @@
+.generalDiv{
+    display: grid;
+    grid-template-columns: repeat(2, 45vw);
+    justify-content: center;
+}

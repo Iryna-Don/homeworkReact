@@ -1,0 +1,19 @@
+.image{
+    width: 15vw;
+}
+.cardWrapper{
+    display: flex;
+    flex-direction: column;
+    margin: 2vw;
+    padding: 1vw;
+    width: 40vw;
+    border: 1px solid;
+    border-radius: 15px;
+    box-shadow: 13px -11px 12px -1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 13px -11px 12px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 13px -11px 12px -1px rgba(0,0,0,0.75);
+    background-color: #f8f8f8;
+}
+.thumbnail{
+    font-size: 0.7vw;
+}
