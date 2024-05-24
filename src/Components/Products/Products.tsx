@@ -3,8 +3,9 @@ import Product, {IProductProps} from "./Product";
 import styles from "./Products.module.css";
 
 const Products: FC<any> = () => {
+    const limit = 30;
     const [skip, setSkip] = useState(0);
-    let linkText = 'https://dummyjson.com/products?limit=30&skip=' + skip;
+    let linkText = 'https://dummyjson.com/products?limit=' + limit + '&skip=' + skip;
     const [link, setLink] = useState(linkText);
     const [products, setProducts] = useState<IProductProps[]>([]);
     const [total, setTotal] = useState<number>(0);
@@ -19,17 +20,17 @@ const Products: FC<any> = () => {
     return (
         <>
             <button disabled={skip <= 0}
-            onClick={() => {
-                setSkip(skip - 30);
-                setLink(linkText);
-            }}>Previous 30 Cards
+                    onClick={() => {
+                        setSkip(skip - limit);
+                        setLink(linkText);
+                    }}>Previous {limit} Cards
             </button>
 
             <button disabled={skip >= total}
                     onClick={() => {
-                setSkip(skip + 30);
-                setLink(linkText);
-            }}>Next 30 Cards
+                        setSkip(skip + limit);
+                        setLink(linkText);
+                    }}>Next {limit} Cards
             </button>
 
             <div className={styles.generalDiv}>
