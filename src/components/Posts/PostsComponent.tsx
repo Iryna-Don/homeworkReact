@@ -3,15 +3,19 @@ import {IPostModel} from "../../models/IPostModel";
 import PostComponent from "../Post/PostComponent";
 import {requests} from "../../services/dummyjson.api.service";
 
-const PostsComponent: FC = () => {
-    const [posts, setPosts] = useState<IPostModel[]>([]);
-    useEffect(() => {
-        requests.posts.getAllPosts().then(({data}) => setPosts(data.posts));
-    }, [])
+interface IProps {
+    allPostsById:IPostModel[];
+}
+
+const PostsComponent: FC<IProps> = ({allPostsById}) => {
+    // const [posts, setPosts] = useState<IPostModel[]>([]);
+    // useEffect(() => {
+    //     requests.posts.getAllPosts().then(({data}) => setPosts(data.posts));
+    // }, [])
     return (
         <div>
             {
-                posts.map(post => (<PostComponent key={post.id} post={post}/>))
+                allPostsById.map(post => (<PostComponent key={post.id} post={post}/>))
             }
         </div>
     );
