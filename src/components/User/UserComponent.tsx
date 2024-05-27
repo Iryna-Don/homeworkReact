@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import {IUserModel} from "../../models/IUserModel";
+import styles from "../../modulesCss/user.module.css"
 
 interface IProps {
     user: IUserModel;
@@ -19,7 +20,7 @@ const UserComponent: FC<IPropsType> = ({user, lift}) => {
                 {user.id}
                 {user.firstName} {user.lastName}
             </div>
-            <button onClick={onclickHandler}>Show Posts {user.firstName} {user.lastName}</button>
+            <button className={styles.btnShowPosts} onClick={onclickHandler}>Show Posts {user.firstName} {user.lastName}</button>
             <hr/>
 
         </>

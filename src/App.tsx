@@ -1,10 +1,11 @@
+import styles from "./modulesCss/app.module.css"
 import React, {useState} from 'react';
 import './App.css';
 import UsersComponent from "./components/Users/UsersComponent";
-import PostsComponent from "./components/Posts/PostsComponent";
 import {IPostModel} from "./models/IPostModel";
 import {requests} from "./services/dummyjson.api.service";
 import PostsComponentById from "./components/Posts/PostsComponentById";
+// import PostsComponent from "./components/Posts/PostsComponent";
 
 const App = () => {
     const[posts, setPosts]=useState<IPostModel[]>([]);
@@ -14,7 +15,7 @@ const App = () => {
 
 
     return (
-        <div>
+        <div className={styles.wrapperForAll}>
             <UsersComponent lift={lift}/>
             {/*<PostsComponent/>*/}
             <PostsComponentById allPostsById={posts}/>
