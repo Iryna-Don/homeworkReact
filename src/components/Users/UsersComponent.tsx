@@ -8,7 +8,7 @@ type IPropsType = { lift?: (userId: number) => void }
 const UsersComponent: FC<IPropsType> = ({lift}) => {
     const [users, setUsers] = useState<IUserModel[]>([]);
 
-    const [limit, setLimit] = useState(5);
+    const [limit, setLimit] = useState(7);
     const [skip, setSkip] = useState(0);
     const [total, setTotal]=useState(0)
 

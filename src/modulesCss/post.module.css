@@ -1,0 +1,10 @@
+.postCard {
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
+    background-color: darkseagreen;
+    border-radius: 10px;
+    padding: 0.5vw;
+    margin: 1vw;
+    border: 1px solid;
+}

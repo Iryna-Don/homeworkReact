@@ -21,6 +21,9 @@ const UserComponent: FC<IPropsType> = ({user, lift}) => {
                 {user.firstName} {user.lastName}
             </div>
             <button className={styles.btnShowPosts} onClick={onclickHandler}>Show Posts {user.firstName} {user.lastName}</button>
+            <br/>
+            <br/>
+            <hr/>
             <hr/>
 
         </>
