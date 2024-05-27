@@ -4,6 +4,7 @@ import UsersComponent from "./components/Users/UsersComponent";
 import PostsComponent from "./components/Posts/PostsComponent";
 import {IPostModel} from "./models/IPostModel";
 import {requests} from "./services/dummyjson.api.service";
+import PostsComponentById from "./components/Posts/PostsComponentById";
 
 const App = () => {
     const[posts, setPosts]=useState<IPostModel[]>([]);
@@ -15,7 +16,8 @@ const App = () => {
     return (
         <div>
             <UsersComponent lift={lift}/>
-            <PostsComponent allPostsById={posts}/>
+            <PostsComponent/>
+            <PostsComponentById allPostsById={posts}/>
         </div>
     );
 }
