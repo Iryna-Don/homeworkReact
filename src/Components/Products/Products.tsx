@@ -3,8 +3,8 @@ import Product, {IProductProps} from "./Product";
 import styles from "./Products.module.css";
 
 const Products: FC<any> = () => {
-    const limit = 30;
     const [skip, setSkip] = useState(0);
+    const [limit, setLimit] = useState(30);
     let linkText = 'https://dummyjson.com/products?limit=' + limit + '&skip=' + skip;
     const [link, setLink] = useState(linkText);
     const [products, setProducts] = useState<IProductProps[]>([]);
@@ -26,7 +26,7 @@ const Products: FC<any> = () => {
                     }}>Previous {limit} Cards
             </button>
 
-            <button disabled={skip >= total}
+            <button disabled={skip >= total-skip}
                     onClick={() => {
                         setSkip(skip + limit);
                         setLink(linkText);
