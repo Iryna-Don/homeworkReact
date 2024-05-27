@@ -16,7 +16,7 @@ const App = () => {
     return (
         <div>
             <UsersComponent lift={lift}/>
-            <PostsComponent/>
+            {/*<PostsComponent/>*/}
             <PostsComponentById allPostsById={posts}/>
         </div>
     );

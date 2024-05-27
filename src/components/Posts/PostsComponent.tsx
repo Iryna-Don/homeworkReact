@@ -6,7 +6,7 @@ import {requests} from "../../services/dummyjson.api.service";
 const PostsComponent: FC = () => {
     const [posts, setPosts] = useState<IPostModel[]>([]);
     useEffect(() => {
-        requests.posts.getAllPosts().then(({data}) => setPosts(data.posts));
+        requests.posts.getAllPosts(30,0).then(({data}) => setPosts(data.posts));
     }, [])
     return (
         <div>

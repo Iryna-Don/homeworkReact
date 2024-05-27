@@ -6,14 +6,15 @@ let axiosInstance = axios.create({
 
 });
 export const requests = {
+
     posts: {
-        getAllPosts: () => {
-            return axiosInstance.get('/posts?limit=0')
+        getAllPosts: (limitPosts: number, skipPosts: number) => {
+            return axiosInstance.get('/posts?limit=' + limitPosts + '&skip=' + skipPosts)
         }
     },
     users: {
-        getAllUsers: () => {
-            return axiosInstance.get('/users?limit=0')
+        getAllUsers: (limitUsers: number, skipUsers: number) => {
+            return axiosInstance.get('/users?limit=' + limitUsers + '&skip=' + skipUsers)
         }
     },
 
