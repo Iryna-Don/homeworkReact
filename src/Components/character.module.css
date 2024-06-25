@@ -1,0 +1,18 @@
+.wrapperForCards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2vw;
+    padding: 3vw;
+}
+
+.characterCard {
+    border: 1px solid yellowgreen;
+    border-radius: 1vw;
+    box-shadow: 3px 3px 5px 3px grey;
+    padding: 2vw;
+    width: 350px;
+}
+
+.imgCharacter{
+    width: 10vw;
+}
