@@ -3,5 +3,4 @@ export interface ICharacter{
     character: string,
     image: string,
     characterDirection: string,
-    // children?: React.ReactNode,
 }

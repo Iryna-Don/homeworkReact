@@ -13,6 +13,15 @@
     width: 350px;
 }
 
-.imgCharacter{
+.imgCharacter {
     width: 10vw;
+}
+
+select {
+    border: 2px double mediumvioletred;
+    margin: 2vw;
+    width: 20vw;
+    height: 3vw;
+    font-size: 1.5vw;
+    color: chocolate;
 }
