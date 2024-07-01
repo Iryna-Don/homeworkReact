@@ -1,0 +1,12 @@
+.wrapper{
+    display: flex;
+}
+.users{
+    margin: 0 2vw;
+    width: 20vw;
+}
+.postsByUserId{
+    margin: 0 2vw;
+    display: flex;
+    flex-direction: column;
+}
