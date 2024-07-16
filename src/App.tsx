@@ -13,7 +13,7 @@ const App = () => {
 // =========================================usePrevious=============================================
 
     let arrFruit: string[] = ['banana', 'orange', 'cherry', 'apple', 'pear', 'plum'];
-    let arrNumbers: number[] = [1, 13, 23, 58, 111];
+    // let arrNumbers: number[] = [1, 13, 23, 58, 111];
 
     let [value1, setValue1] = useState<any>(arrFruit[0]);
     const prev = usePrevious(value1);
@@ -34,10 +34,10 @@ const App = () => {
     const [value3, setNewValueInLocalStorage1] = useLocalStorage('data_1', 12);
 
     useEffect(() =>
-        setNewValueInLocalStorage(userObj), [value2]
+        setNewValueInLocalStorage(userObj), []
     );
     useEffect(() =>
-        setNewValueInLocalStorage1(57), [value3]
+        setNewValueInLocalStorage1(67), []
     );
 
 
