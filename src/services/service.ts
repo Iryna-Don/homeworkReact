@@ -1,20 +1,40 @@
-import axios, {AxiosResponse} from "axios";
+import axios from "axios";
 
 let axiosInstance = axios.create({
-    baseURL: 'https://dummyjson.com',
-    headers: {'Content-Type': 'application/json'},
+    baseURL: 'https://jsonplaceholder.typicode.com',
+    headers: {'Content-type': 'application/json', 'charset': 'UTF-8'}
+
 });
-export const requests =
-    {
-        getAllUsers: (limit: number, skip: number): Promise<AxiosResponse<IAxiosUsers>> => {
-            return axiosInstance.get('/users?limit=' + limit + '&skip=' + skip)
-        },
+export const requests = {
 
-        getAllPosts: (): Promise<AxiosResponse<IAxiosPosts>> => {
-            return axiosInstance.get('/posts')
-        },
-
-        getAllPostsByUserId: (id: number): Promise<AxiosResponse<IAxiosPosts>> => {
-            return axiosInstance.get('/posts/user/' + id)
-        },
-    }
+    users: {
+        getAllUsers: (limitUsers: number, skipUsers: number) => {
+            return axiosInstance.get('/users?limit=' + limitUsers + '&skip=' + skipUsers)
+        }
+    },
+    posts: {
+        getAllPosts: (limitPosts: number, skipPosts: number) => {
+            return axiosInstance.get('/posts?limit=' + limitPosts + '&skip=' + skipPosts)
+        }
+    },
+    comments: {
+        getAllComments: (limitComments: number, skipComments: number) => {
+            return axiosInstance.get('/comments?limit=' + limitComments + '&skip=' + skipComments)
+        }
+    },
+    userById: {
+        getUserById: (userId: number) => {
+            return axiosInstance.get('/users/' + userId)
+        }
+    },
+    postsByUserId: {
+        getPostsByUserId: (userId: number) => {
+            return axiosInstance.get('/posts?userId=' + userId)
+        }
+    },
+    commentsByPostId: {
+        getCommentsByPostId: (postId: number) => {
+            return axiosInstance.get('/posts/' + postId + '/comments')
+        }
+    },
+}
