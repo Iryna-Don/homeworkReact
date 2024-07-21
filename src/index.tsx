@@ -5,10 +5,12 @@ import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import CustomErrorLayout from "./layouts/CustomErrorLayout";
-import UsersPage from "./pages/UsersPage";
-import PostsPage from "./pages/PostsPage";
-import CommentsPage from "./pages/CommentsPage";
 import HomePage from "./pages/HomePage";
+import PostsByUserId from "./components/PostsByUserId";
+import Posts from "./components/Posts";
+import CommentsByPostId from "./components/CommentsByPostId";
+import Comments from "./components/Comments";
+import Users from "./components/Users";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -17,16 +19,23 @@ const root = ReactDOM.createRoot(
 let router = createBrowserRouter([
     {
         path: '/', element: <MainLayout/>, errorElement: <CustomErrorLayout/>, children: [
-            {index: true, element:<HomePage/>},
+            {index: true, element: <HomePage/>},
             {
-                path: 'users', element: <UsersPage/>
+                path: 'users', element: <Users/>
             },
             {
-                path: 'posts', element: <PostsPage/>
+                path: 'posts', element: <Posts/>
             },
             {
-                path: 'comments', element: <CommentsPage/>
-            }
+                path: 'userIdPosts', element: <PostsByUserId/>
+            },
+            {
+                path: 'comments', element: <Comments/>
+            },
+            {
+                path: 'postIdComments', element: <CommentsByPostId/>
+            },
+
         ]
     },
     {path: '/vesna', element: <p><i>Весна прийде</i></p>}

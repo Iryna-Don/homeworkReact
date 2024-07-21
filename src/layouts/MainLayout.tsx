@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import MenuComponent from "../components/MenuComponent";
 import {Outlet} from "react-router-dom";
 
@@ -8,7 +8,7 @@ const MainLayout = () => {
             <MenuComponent/>
             <Outlet/>
         </div>
-);
+    );
 };
 
 export default MainLayout;
