@@ -9,17 +9,17 @@ export const requests = {
 
     users: {
         getAllUsers: (limitUsers: number, skipUsers: number) => {
-            return axiosInstance.get('/users?limit=' + limitUsers + '&skip=' + skipUsers)
+            return axiosInstance.get('/users?&_limit=' + limitUsers + '&_start=' + skipUsers)
         }
     },
     posts: {
         getAllPosts: (limitPosts: number, skipPosts: number) => {
-            return axiosInstance.get('/posts?limit=' + limitPosts + '&skip=' + skipPosts)
+            return axiosInstance.get('/posts?_limit=' + limitPosts + '&_start=' + skipPosts)
         }
     },
     comments: {
         getAllComments: (limitComments: number, skipComments: number) => {
-            return axiosInstance.get('/comments?limit=' + limitComments + '&skip=' + skipComments)
+            return axiosInstance.get('/comments?_limit=' + limitComments + '&_start=' + skipComments)
         }
     },
     userById: {
