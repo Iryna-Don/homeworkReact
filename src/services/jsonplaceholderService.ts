@@ -22,11 +22,6 @@ export const requests = {
             return axiosInstance.get('/comments?_limit=' + limitComments + '&_start=' + skipComments)
         }
     },
-    userById: {
-        getUserById: (userId: number) => {
-            return axiosInstance.get('/users/' + userId)
-        }
-    },
     postsByUserId: {
         getPostsByUserId: (userId: number) => {
             return axiosInstance.get('/posts?userId=' + userId)
@@ -37,4 +32,10 @@ export const requests = {
             return axiosInstance.get('/posts/' + postId + '/comments')
         }
     },
+    userById: {
+        getUserById: (userId: number) => {
+            return axiosInstance.get('/users/' + userId)
+        }
+    },
+
 }
