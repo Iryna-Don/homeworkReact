@@ -1,0 +1,9 @@
+.errorImg{
+    margin: 2vw;
+    background-image: url('https://img.freepik.com/free-vector/monster-404-error-concept-illustration_114360-1879.jpg?ga=GA1.1.1676048053.1707253238&semt=sph');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 95vw;
+    height: 90vh;
+    position: page;
+}
