@@ -1,0 +1,14 @@
+.errorImg {
+    padding-left: 2vw;
+    background-image: url('https://tproger.ru/signed_image/KFbovf20RIW3mMSCZMNvF5Dw1jdxQdOK5f62O94Z25M/rs:fill:932:0:true/cb:vimg_2/f:webp/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VwbG9hZHMvMjAxNS8wNC9waWMwOC5qcGc'
+    );
+    background-repeat: no-repeat;
+    width: 95vw;
+    height: 95vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-position: center;
+}
+.red{
+    color: red;
+}
