@@ -1,0 +1,22 @@
+.wrap{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2vw;
+}
+.postCard {
+    border-radius: 1vw;
+    border: 1px solid;
+    justify-content: center;
+    width: 40vw;
+    padding: 2vw;
+    box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.5);
+    background-image: url('https://img.freepik.com/free-vector/minimalist-white-abstract-background_23-2148816315.jpg?ga=GA1.1.1676048053.1707253238&semt=ais_user');
+    background-size: cover;
+}
+span{
+    font-weight: bold;
+
+}
+

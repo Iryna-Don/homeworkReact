@@ -22,7 +22,9 @@ export const jsonplaceholderService =
         getAllPosts: (): Promise<AxiosResponse<IPost[]>> => {
             return axiosInstance.get('posts')
         },
-
+        getPostsByUserId: (userId: number): Promise<AxiosResponse<IPost[]>> => {
+            return axiosInstance.get('users/' + userId + '/posts')
+        },
         getAllComments: (): Promise<AxiosResponse<IComment[]>> => {
             return axiosInstance.get('comments')
         },
