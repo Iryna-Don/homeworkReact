@@ -29,8 +29,16 @@ let router = createBrowserRouter(
         {
             path: '/', element: <MainLayout/>, errorElement:<ErrorPage/>, children: [
                 {index: true, element: <HomePage/>},
+
+                // ============================= will be displayed on UsersPage as children ============
+                // {path: 'users', element: <UsersPage/>, children:[
+                //         {path: ':userId', element: <UserPage/>}
+                //     ]},
+                // =====================================================================================
+                // ============================= will be displayed on another page independently =======
                 {path: 'users', element: <UsersPage/>},
                 {path: 'users/:userId', element: <UserPage/>},
+                // =====================================================================================
                 {path: 'posts', element: <PostsPage/>},
                 {path: 'comments', element: <CommentsPage/>},
             ]
