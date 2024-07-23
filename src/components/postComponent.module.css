@@ -1,13 +1,13 @@
 .wrap{
-    display: flex;
-    flex-direction: column;
-    row-gap: 2vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1vw;
 }
 .postCard {
     border-radius: 1vw;
     border: 1px solid;
     justify-content: center;
-    width: 40vw;
+    width: 25vw;
     padding: 2vw;
     box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.5);
     -webkit-box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.5);
