@@ -10,10 +10,10 @@ const CommentComponent: FC<IProps> = ({comments}) => {
         <div>
             {
                 comments.map(({postId, id, body}) =>
-                    <li>
-                        <p>#{postId}</p>
-                        <p>#{id} - {body}</p>
-                    </li>
+                    <div key={id}>
+                        <p>#{id}</p>
+                        <p>#{postId} - {body}</p>
+                    </div>
                 )
             }
         </div>

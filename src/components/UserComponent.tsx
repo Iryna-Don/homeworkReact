@@ -7,7 +7,7 @@ const UserComponent:FC<IProps> = ({users}) => {
     return (
         <div>
             {
-                users.map(user=><li>#{user.id} - {user.name}</li>)
+                users.map(user=><div key={user.id}>#{user.id} - {user.name}</div>)
             }
         </div>
     );
