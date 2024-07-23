@@ -9,6 +9,9 @@ let axiosInstance = axios.create({
     headers: {'Content-Type': 'application/json'},
 });
 export const jsonplaceholderService =
+
+//Створити сторінки та роутери на них users, posts, comments
+
     {
         getAllUsers: (): Promise<AxiosResponse<IUser[]>> => {
             return axiosInstance.get('users')
@@ -22,7 +25,7 @@ export const jsonplaceholderService =
             return axiosInstance.get('comments')
         },
     }
-
+// =======================================================================================================
 
 // Приклад: https://jsonplaceholder.typicode.com/users?_limit=5&_start=3 - return axiosInstance.get('users?_limit='+limit+'&_start='+skip
 // https://jsonplaceholder.typicode.com/posts
