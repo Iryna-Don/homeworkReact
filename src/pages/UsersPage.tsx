@@ -15,7 +15,7 @@ const UsersPage = () => {
     return (
         <div className={styles.wrap}>
             <UserComponent users={allUsers}/>
-            <Outlet/>
+            {/*<Outlet/>*/}
         </div>
     );
 };

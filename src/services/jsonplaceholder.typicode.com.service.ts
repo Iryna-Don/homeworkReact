@@ -28,6 +28,9 @@ export const jsonplaceholderService =
         getAllComments: (): Promise<AxiosResponse<IComment[]>> => {
             return axiosInstance.get('comments')
         },
+        getCommentsByPostId: (postId:number): Promise<AxiosResponse<IComment[]>> => {
+            return axiosInstance.get('posts/'+postId+'/comments')
+        },
     }
 // =======================================================================================================
 

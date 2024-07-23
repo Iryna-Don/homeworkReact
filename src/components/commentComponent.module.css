@@ -1,0 +1,26 @@
+.commentWrap {
+    margin: 0 1vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2vw;
+}
+
+.commentCard {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1vw;
+    border: 1px solid;
+    justify-content: center;
+    width: 25vw;
+    padding: 2vw;
+    box-shadow: 15px 15px 5px 0 rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 15px 15px 5px 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 15px 15px 5px 0 rgba(0, 0, 0, 0.5);
+    background-image: url('https://img.freepik.com/free-photo/luxury-plain-green-gradient-abstract-studio-background-empty-room-with-space-your-text-picture_1258-63580.jpg?ga=GA1.1.1676048053.1707253238&semt=ais_user');
+    background-size: cover;
+    background-position:left;
+    transition: 1s;
+}
+.commentCard:hover {
+    background-image: url('https://img.freepik.com/free-vector/abstract-grass_1182-699.jpg?ga=GA1.1.1676048053.1707253238&semt=ais_user');
+}

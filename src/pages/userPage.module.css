@@ -20,21 +20,11 @@
     background-image: url('https://img.freepik.com/free-photo/blue-psychedelic-paper-shapes_23-2149378252.jpg?ga=GA1.1.1676048053.1707253238&semt=ais_user');
     background-size: cover;
     color: white;
+    transition: 1.5s;
+
 }
 
 .userCard:hover {
     background-image: url("https://img.freepik.com/free-photo/vivid-blurred-colorful-background_58702-2655.jpg?ga=GA1.1.1676048053.1707253238&semt=ais_user");
     color: black;
-}
-
-h4, p {
-    margin: 0;
-}
-
-h4 {
-    font-size: 14px;
-}
-
-p {
-    font-size: 12px;
 }

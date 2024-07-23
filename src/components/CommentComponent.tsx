@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import {IComment} from "../interfaces/IComment";
+import styles from "./commentComponent.module.css"
 
 interface IProps {
     comments: IComment[],
@@ -7,12 +8,13 @@ interface IProps {
 
 const CommentComponent: FC<IProps> = ({comments}) => {
     return (
-        <div>
+        <div  className={styles.commentWrap}>
             {
                 comments.map(({postId, id, body}) =>
-                    <div key={id}>
-                        <p>#{id}</p>
-                        <p>#{postId} - {body}</p>
+                    <div className={styles.commentCard} key={id}>
+                        <p><span>Comment ID:</span> {id}</p>
+                        <p><span>Post ID:</span> {postId}</p>
+                        <p><span>Comment:</span> {body}</p>
                     </div>
                 )
             }
