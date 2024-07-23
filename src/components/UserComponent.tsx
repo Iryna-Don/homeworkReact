@@ -1,9 +1,14 @@
-import React, {FC} from 'react';
-const UserComponent:FC = () => {
-
+import React, {FC} from 'react'
+import {IUser} from "../interfaces/IUser";
+interface IProps {
+    users:IUser[],
+}
+const UserComponent:FC<IProps> = ({users}) => {
     return (
         <div>
-            User Component
+            {
+                users.map(user=><li>#{user.id} - {user.name}</li>)
+            }
         </div>
     );
 };

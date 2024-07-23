@@ -12,7 +12,7 @@ const UsersPage = () => {
     }, []);
     return (
         <div>
-            {allUsers.map(elem=><UserComponent/>)}
+            {<UserComponent users={allUsers}/>}
         </div>
     );
 };
