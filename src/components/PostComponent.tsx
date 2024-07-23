@@ -13,7 +13,8 @@ const PostComponent: FC<IProps> = ({posts}) => {
                 posts.map(({userId, id, title, body}) =>
                     <div className={styles.postCard} key={id}>
                         <p><span>Post Id: </span>{id}</p>
-                        <p><span>User Id: </span>{userId} <span>Title: </span> {title}</p>
+                        <p><span>User Id: </span>{userId}</p>
+                        <p><span>Title: </span> {title}</p>
                         <p>{body}</p>
                     </div>)
             }

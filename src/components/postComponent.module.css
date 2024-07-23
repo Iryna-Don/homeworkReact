@@ -1,13 +1,16 @@
-.wrap{
+.wrap {
+    margin: 0 1vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 1vw;
+    justify-items: center;
 }
+
 .postCard {
     border-radius: 1vw;
     border: 1px solid;
     justify-content: center;
-    width: 25vw;
+    width: auto;
     padding: 2vw;
     box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.5);
     -webkit-box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.5);
@@ -15,7 +18,13 @@
     background-image: url('https://img.freepik.com/free-vector/minimalist-white-abstract-background_23-2148816315.jpg?ga=GA1.1.1676048053.1707253238&semt=ais_user');
     background-size: cover;
 }
-span{
+
+.postCard:hover {
+    background-image: url('https://img.freepik.com/free-photo/blue-psychedelic-paper-shapes_23-2149378252.jpg?ga=GA1.1.1676048053.1707253238&semt=ais_user');
+    color: white;
+}
+
+span {
     font-weight: bold;
 
 }

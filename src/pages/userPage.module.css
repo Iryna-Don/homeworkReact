@@ -1,7 +1,10 @@
-.wrap{
+.wrap {
+    margin-left: 1vw;
     display: grid;
-grid-template-columns: 1fr 2fr;
-grid-gap: 2vw;}
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 1vw;
+}
+
 .userCard {
     display: flex;
     flex-direction: column;
