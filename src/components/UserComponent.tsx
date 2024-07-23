@@ -1,5 +1,6 @@
 import React, {FC} from 'react'
 import {IUser} from "../interfaces/IUser";
+import {Link} from "react-router-dom";
 interface IProps {
     users:IUser[],
 }
@@ -7,7 +8,7 @@ const UserComponent:FC<IProps> = ({users}) => {
     return (
         <div>
             {
-                users.map(user=><div key={user.id}>#{user.id} - {user.name}</div>)
+                users.map(user=><div key={user.id}>#{user.id} - <Link to={(user.id).toString()}>{user.name}</Link></div>)
             }
         </div>
     );

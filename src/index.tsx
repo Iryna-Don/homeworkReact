@@ -19,6 +19,7 @@ import HomePage from "./pages/HomePage";
 import UsersPage from "./pages/UsersPage";
 import PostsPage from "./pages/PostsPage";
 import CommentsPage from "./pages/CommentsPage";
+import UserPage from "./pages/UserPage";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -29,6 +30,7 @@ let router = createBrowserRouter(
             path: '/', element: <MainLayout/>, errorElement:<ErrorPage/>, children: [
                 {index: true, element: <HomePage/>},
                 {path: 'users', element: <UsersPage/>},
+                {path: 'users/:userId', element: <UserPage/>},
                 {path: 'posts', element: <PostsPage/>},
                 {path: 'comments', element: <CommentsPage/>},
             ]

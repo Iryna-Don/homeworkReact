@@ -1,0 +1,32 @@
+.userCard {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1vw;
+    border: 1px solid;
+    justify-content: center;
+    width: 50vw;
+    padding: 2vw;
+    box-shadow: 15px 15px 5px 0 rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 15px 15px 5px 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 15px 15px 5px 0 rgba(0, 0, 0, 0.5);
+    background-image: url('https://img.freepik.com/free-photo/blue-psychedelic-paper-shapes_23-2149378252.jpg?ga=GA1.1.1676048053.1707253238&semt=ais_user');
+    background-size: cover;
+    color: white;
+}
+
+.userCard:hover {
+    background-image: url("https://img.freepik.com/free-photo/vivid-blurred-colorful-background_58702-2655.jpg?ga=GA1.1.1676048053.1707253238&semt=ais_user");
+    color: black;
+}
+
+h4, p {
+    margin: 0;
+}
+
+h4 {
+    font-size: 14px;
+}
+
+p {
+    font-size: 12px;
+}

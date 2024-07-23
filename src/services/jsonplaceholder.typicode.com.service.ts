@@ -11,10 +11,12 @@ let axiosInstance = axios.create({
 export const jsonplaceholderService =
 
 //Створити сторінки та роутери на них users, posts, comments
-
     {
         getAllUsers: (): Promise<AxiosResponse<IUser[]>> => {
             return axiosInstance.get('users')
+        },
+        getUserByUserId: (userId: number): Promise<AxiosResponse<IUser>> => {
+            return axiosInstance.get('users/' + userId)
         },
 
         getAllPosts: (): Promise<AxiosResponse<IPost[]>> => {
