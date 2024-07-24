@@ -8,7 +8,7 @@ const UserComponent:FC<IProps> = ({users}) => {
     return (
         <div>
             {
-                users.map(user=><div key={user.id}>#{user.id} - <Link to={(user.id).toString()}>{user.name}</Link></div>)
+                users.map(user=><div key={user.id}>#{user.id} - <Link to={(user.id).toString()} state={user}>{user.name}</Link></div>)
             }
         </div>
     );
