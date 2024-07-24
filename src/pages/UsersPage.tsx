@@ -12,11 +12,12 @@ const UsersPage = () => {
             setAllUsers(data);
         })
     }, []);
-    return (
-        <div className={styles.wrap}>
-            <UserComponent users={allUsers}/>
-            {/*<Outlet/>*/}
-        </div>
+    return (<>
+            <div className={styles.wrap}>
+                <UserComponent users={allUsers}/>
+                {/*<Outlet/>*/}
+            </div>
+        </>
     );
 };
 

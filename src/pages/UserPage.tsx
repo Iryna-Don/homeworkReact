@@ -8,17 +8,17 @@ import PostComponent from "../components/PostComponent";
 
 
 const UserPage = () => {
-    const {userId} = useParams();
     const location = useLocation();
-    const state = location.state;
+    const state:IUser = location.state;
+    console.log(state)
 
     // ============================ display all posts of user by userId =======================================
     const [postsByUserId, setPostsByUserId] = useState<IPost[]>([])
     useEffect(() => {
-        jsonplaceholderService.getPostsByUserId(Number(userId)).then(({data}) => {
+        jsonplaceholderService.getPostsByUserId(Number(state.id)).then(({data}) => {
             setPostsByUserId(data);
         })
-    }, [userId]);
+    }, [state.id]);
 
     return (<div className={styles.wrap}>
             <div className={styles.userCard}>
