@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
-import CommentComponent from "../components/CommentComponent";
+import CommentsComponent from "../components/CommentsComponent";
 import {IComment} from "../interfaces/IComment";
 import {jsonplaceholderService} from "../services/jsonplaceholder.typicode.com.service";
 const CommentsByPostIdPage = () => {
@@ -14,7 +14,7 @@ const CommentsByPostIdPage = () => {
 
     return (
         <div>
-            <CommentComponent comments={commentsByPostId}/>
+            <CommentsComponent comments={commentsByPostId}/>
         </div>
     );
 };

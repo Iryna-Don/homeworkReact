@@ -19,8 +19,8 @@ export const jsonplaceholderService =
             return axiosInstance.get('users/' + userId)
         },
 
-        getAllPosts: (): Promise<AxiosResponse<IPost[]>> => {
-            return axiosInstance.get('posts')
+        getAllPosts: (skip:number, limit:number): Promise<AxiosResponse<IPost[]>> => {
+            return axiosInstance.get('posts?_start='+skip+'&_limit='+limit)
         },
         getPostsByUserId: (userId: number): Promise<AxiosResponse<IPost[]>> => {
             return axiosInstance.get('users/' + userId + '/posts')

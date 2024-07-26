@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import {jsonplaceholderService} from "../services/jsonplaceholder.typicode.com.service";
 import {IUser} from "../interfaces/IUser";
-import UserComponent from "../components/UserComponent";
-import {Outlet} from "react-router-dom";
+import {Outlet, useSearchParams} from "react-router-dom";
 import styles from "./usersPage.module.css"
+import PaginationComponent from "../components/PaginationComponent";
+import UsersComponent from "../components/UsersComponent";
 
 const UsersPage = () => {
     const [allUsers, setAllUsers] = useState<IUser[]>([]);
@@ -14,7 +15,7 @@ const UsersPage = () => {
     }, []);
     return (<>
             <div className={styles.wrap}>
-                <UserComponent users={allUsers}/>
+                <UsersComponent users={allUsers}/>
                 {/*<Outlet/>*/}
             </div>
         </>

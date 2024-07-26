@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 interface IProps {
     users:IUser[],
 }
-const UserComponent:FC<IProps> = ({users}) => {
+const UsersComponent:FC<IProps> = ({users}) => {
     return (
         <div>
             {
@@ -14,4 +14,4 @@ const UserComponent:FC<IProps> = ({users}) => {
     );
 };
 
-export default UserComponent;
+export default UsersComponent;

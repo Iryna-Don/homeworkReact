@@ -7,7 +7,7 @@ interface IProps {
     posts: IPost[],
 }
 
-const PostComponent: FC<IProps> = ({posts}) => {
+const PostsComponent: FC<IProps> = ({posts}) => {
     return (
         <div className={styles.wrap}>
             {
@@ -26,4 +26,4 @@ const PostComponent: FC<IProps> = ({posts}) => {
     );
 };
 
-export default PostComponent;
+export default PostsComponent;

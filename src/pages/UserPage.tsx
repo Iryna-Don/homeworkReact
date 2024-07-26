@@ -1,15 +1,18 @@
 import React, {useEffect, useState} from 'react';
-import {useLocation, useParams} from "react-router-dom";
+import {Location, useLocation} from "react-router-dom";
 import {IUser} from "../interfaces/IUser";
 import {jsonplaceholderService} from "../services/jsonplaceholder.typicode.com.service";
 import styles from "./userPage.module.css"
 import {IPost} from "../interfaces/IPost";
-import PostComponent from "../components/PostComponent";
+import PostsComponent from "../components/PostsComponent";
+import {UseAppLocation} from "../hooks/useAppLocation";
 
 
 const UserPage = () => {
-    const location = useLocation();
-    const state:IUser = location.state;
+    // const state:Location<IUser> = useLocation();
+    const state:IUser = useLocation().state;
+    // const location = UseAppLocation<IUser>();
+    // const state = location.state;
     console.log(state)
 
     // ============================ display all posts of user by userId =======================================
@@ -43,7 +46,7 @@ const UserPage = () => {
             </div>
             {/*============================ display all posts of user by userId =======================================*/}
             <div>
-                <PostComponent posts={postsByUserId}/>
+                <PostsComponent posts={postsByUserId}/>
             </div>
         </div>
     );

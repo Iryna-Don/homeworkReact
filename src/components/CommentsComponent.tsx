@@ -6,7 +6,7 @@ interface IProps {
     comments: IComment[],
 }
 
-const CommentComponent: FC<IProps> = ({comments}) => {
+const CommentsComponent: FC<IProps> = ({comments}) => {
     return (
         <div  className={styles.commentWrap}>
             {
@@ -22,4 +22,4 @@ const CommentComponent: FC<IProps> = ({comments}) => {
     );
 };
 
-export default CommentComponent;
+export default CommentsComponent;

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {jsonplaceholderService} from "../services/jsonplaceholder.typicode.com.service";
 import {IComment} from "../interfaces/IComment";
-import CommentComponent from "../components/CommentComponent";
+import CommentsComponent from "../components/CommentsComponent";
 
 const CommentsPage = () => {
     const[allComments, setAllComments]=useState<IComment[]>([]);
@@ -13,7 +13,7 @@ const CommentsPage = () => {
 
     return (
         <div>
-            <CommentComponent comments={allComments}/>
+            <CommentsComponent comments={allComments}/>
         </div>
     );
 };
