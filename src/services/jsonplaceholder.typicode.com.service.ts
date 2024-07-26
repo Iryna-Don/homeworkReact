@@ -12,21 +12,21 @@ export const jsonplaceholderService =
 
 //Створити сторінки та роутери на них users, posts, comments
     {
-        getAllUsers: (): Promise<AxiosResponse<IUser[]>> => {
-            return axiosInstance.get('users')
+        getAllUsers: (skip:number, limit:number): Promise<AxiosResponse<IUser[]>> => {
+            return axiosInstance.get('users?_start='+skip+'&_limit='+limit)
         },
-        getUserByUserId: (userId: number): Promise<AxiosResponse<IUser>> => {
-            return axiosInstance.get('users/' + userId)
-        },
-
+        // не знадобилося, оскільки в даному завданні передавала дані через state
+        // getUserByUserId: (userId: number): Promise<AxiosResponse<IUser>> => {
+        //     return axiosInstance.get('users/' + userId)
+        // },
         getAllPosts: (skip:number, limit:number): Promise<AxiosResponse<IPost[]>> => {
             return axiosInstance.get('posts?_start='+skip+'&_limit='+limit)
         },
         getPostsByUserId: (userId: number): Promise<AxiosResponse<IPost[]>> => {
             return axiosInstance.get('users/' + userId + '/posts')
         },
-        getAllComments: (): Promise<AxiosResponse<IComment[]>> => {
-            return axiosInstance.get('comments')
+        getAllComments: (skip:number, limit:number): Promise<AxiosResponse<IComment[]>> => {
+            return axiosInstance.get('comments?_start='+skip+'&_limit='+limit)
         },
         getCommentsByPostId: (postId:number): Promise<AxiosResponse<IComment[]>> => {
             return axiosInstance.get('posts/'+postId+'/comments')

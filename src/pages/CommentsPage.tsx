@@ -2,19 +2,27 @@ import React, {useEffect, useState} from 'react';
 import {jsonplaceholderService} from "../services/jsonplaceholder.typicode.com.service";
 import {IComment} from "../interfaces/IComment";
 import CommentsComponent from "../components/CommentsComponent";
+import {useSearchParams} from "react-router-dom";
+import PaginationComponent from "../components/PaginationComponent";
+import {useSetPaginationLimit} from "../hooks/useSetPaginationLimit";
 
 const CommentsPage = () => {
-    const[allComments, setAllComments]=useState<IComment[]>([]);
+    const [limit, skip, page] = useSetPaginationLimit(30);
+
+    const [allComments, setAllComments] = useState<IComment[]>([]);
     useEffect(() => {
-        jsonplaceholderService.getAllComments().then(({data}) => {
+        jsonplaceholderService.getAllComments(skip, limit).then(({data}) => {
             setAllComments(data);
         })
-    }, []);
+    }, [page]);
 
-    return (
-        <div>
-            <CommentsComponent comments={allComments}/>
-        </div>
+    return (<>
+            <PaginationComponent/>
+            <br/>
+            <div>
+                <CommentsComponent comments={allComments}/>
+            </div>
+        </>
     );
 };
 

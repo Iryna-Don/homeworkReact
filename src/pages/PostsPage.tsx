@@ -3,18 +3,10 @@ import PostsComponent from "../components/PostsComponent";
 import {jsonplaceholderService} from "../services/jsonplaceholder.typicode.com.service";
 import {IPost} from "../interfaces/IPost";
 import PaginationComponent from "../components/PaginationComponent";
-import {useSearchParams} from "react-router-dom";
+import {useSetPaginationLimit} from "../hooks/useSetPaginationLimit";
 
 const PostsPage = () => {
-    let [searchParams] = useSearchParams();
-    let page = +(searchParams.get('page') || 0);
-    let skip: number;
-    let limit: number = 10;
-    if (page < 2) {
-        skip = 0
-    } else {
-        skip = (page - 1) * limit;
-    }
+    const [limit, skip, page] = useSetPaginationLimit(10);
 
     const [allPosts, setAllPosts] = useState<IPost[]>([]);
     useEffect(() => {
