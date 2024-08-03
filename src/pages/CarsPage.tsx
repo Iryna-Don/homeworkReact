@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {apiService} from "../services/api.service";
 import {ICarWithAuth} from "../models/ICarWithAuth";
-import CarComponent from "../components/CarComponent";
+import CarsComponent from "../components/CarsComponent";
 
 const CarsPage = () => {
     const [cars, setCars] = useState<ICarWithAuth[]>([]);
@@ -13,8 +13,7 @@ const CarsPage = () => {
 
     return (
         <div>
-            <CarComponent allCars={cars}/>
-            {cars.map(car=><div>{car.id}: {car.brand} - {car.price} <p><img src={car?.photo} alt={car.brand}/></p></div>)}
+            <CarsComponent allCars={cars}/>
         </div>
     )
 }
