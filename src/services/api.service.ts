@@ -50,9 +50,8 @@ export const apiService = {
         return axiosInstance.post('auth', authUserInfo)
     },
 
-    getCars: async (): Promise<AxiosResponse<ICarsPaginated>> => {
+    getCars: async (): Promise<ICarsPaginated> => {
         let response = await axiosInstance.get('cars');
-        console.log(response.data);
         return response.data;
     },
 }

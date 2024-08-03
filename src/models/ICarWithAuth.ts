@@ -3,5 +3,5 @@ export interface ICarWithAuth {
     brand: string,
     price: number,
     year: number,
-    photo: string,
+    photo?: string,
 }
