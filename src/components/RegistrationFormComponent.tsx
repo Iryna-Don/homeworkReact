@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useForm} from "react-hook-form";
 import {IUserModel} from "../models/IUserModel";
 import {joiResolver} from "@hookform/resolvers/joi";
@@ -12,17 +12,18 @@ const RegistrationFormComponent = () => {
         handleSubmit
     } = useForm<IUserModel>({mode: 'all', resolver: joiResolver(userRegistrValidator)});
 
-    const registration = (data: IUserModel) => {
+    const [isRegistered, setIsRegistered] = useState<string>('')
+
+    const registerNewUser = async (data: IUserModel) => {
         console.log(data);
-        apiService.saveUser(data).then(({data}) => {
-            console.log(data);
-            return
-        })
+        let isSuccessReg = await apiService.saveUser(data);
+        setIsRegistered(isSuccessReg);
     }
 
     return (
         <div>
-            <form onSubmit={handleSubmit(registration)}>
+            {isRegistered}
+            <form onSubmit={handleSubmit(registerNewUser)}>
                 <input
                     type={'text'}
                     placeholder={'Enter your username'}
@@ -36,11 +37,10 @@ const RegistrationFormComponent = () => {
                     {...register('password')}
                 />
                 <br/>
-                <button disabled={!isValid}>Submit</button>
+                <button disabled={!isValid}>Register Me</button>
             </form>
         </div>
-    )
-        ;
+    );
 };
 
 export default RegistrationFormComponent;

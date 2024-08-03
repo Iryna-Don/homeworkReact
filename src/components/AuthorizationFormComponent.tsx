@@ -12,7 +12,7 @@ const AuthorizationFormComponent = () => {
         handleSubmit
     } = useForm<IUserModel>({
         mode: 'all', resolver: joiResolver(userRegistrValidator), defaultValues: {
-            username: 'ira', password: 'Spider15+'
+            username: 'IrynaDone', password: 'Spider-man1507'
         }
     });
 
@@ -20,6 +20,9 @@ const AuthorizationFormComponent = () => {
         console.log(data);
         apiService.authUser(data).then(({data}) => {
             console.log(data);
+            localStorage.setItem('tokenPair', JSON.stringify(data));
+            localStorage.setItem('tokenAccess', data.access);
+            localStorage.setItem('tokenRefresh', data.refresh);
         })
     }
 
@@ -39,7 +42,7 @@ const AuthorizationFormComponent = () => {
                     {...register('password')}
                 />
                 <br/>
-                <button disabled={!isValid}>Submit</button>
+                <button disabled={!isValid}>Log In</button>
             </form>
         </div>
     )
