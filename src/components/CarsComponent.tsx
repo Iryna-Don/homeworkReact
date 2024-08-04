@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import {ICarWithAuth} from "../models/ICarWithAuth";
+import CarComponent from "./CarComponent";
 
 interface IProps {
     allCars:ICarWithAuth[],
@@ -7,7 +8,7 @@ interface IProps {
 const CarsComponent:FC<IProps> = ({allCars}) => {
     return (
         <div>
-            {allCars.map(car=><>{car.id}: {car.brand} - {car.price} <p><img src={car?.photo} alt={car.brand}/></p></>)}
+            {allCars.map(car=><CarComponent key={car.id} car={car}/>)}
         </div>
     );
 };

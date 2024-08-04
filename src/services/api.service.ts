@@ -26,7 +26,7 @@ let axiosInstance = axios.create({
 // })
 // ==========================================================================================================================================================
 axiosInstance.interceptors.request.use(requestObject => {
-    if (localStorage.getItem('tokenPair') && requestObject.url !== '/auth' && requestObject.url !== '/auth/refresh') {
+    if (localStorage.getItem('tokenPair') && requestObject.url !== 'auth' && requestObject.url !== 'auth/refresh') {
         requestObject.headers.set('Authorization', 'Bearer ' + typingHelpEmptyStringLocalStorage<IUserResponseAuthModel>('tokenPair').access)
 
     // ==== або у AuthorizationFormComponent при формуванні localStorage.setItem('tokenAccess', data.access) ============
@@ -51,7 +51,7 @@ export const apiService = {
     },
 
     getCars: async (): Promise<ICarsPaginated> => {
-        let response = await axiosInstance.get('cars');
+        let response = await axiosInstance.get<ICarsPaginated>('cars');
         return response.data;
     },
 }
