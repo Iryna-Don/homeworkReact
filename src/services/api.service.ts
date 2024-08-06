@@ -27,13 +27,15 @@ let axiosInstance = axios.create({
 // ==========================================================================================================================================================
 axiosInstance.interceptors.request.use(requestObject => {
     if (localStorage.getItem('tokenPair') && requestObject.url !== 'auth' && requestObject.url !== 'auth/refresh') {
-        requestObject.headers.set('Authorization', 'Bearer ' + typingHelpEmptyStringLocalStorage<IUserResponseAuthModel>('tokenPair').access)
+        // requestObject.headers.set('Authorization', 'Bearer ' + typingHelpEmptyStringLocalStorage<IUserResponseAuthModel>('tokenPair').access)
+        requestObject.headers.Authorization = 'Bearer ' + typingHelpEmptyStringLocalStorage<IUserResponseAuthModel>('tokenPair').access;
+    }
 
     // ==== або у AuthorizationFormComponent при формуванні localStorage.setItem('tokenAccess', data.access) ============
     // requestObject.headers.set('Authorization', 'Bearer ' + localStorage.getItem('tokenAccess'))
     // ===================================================================================================================
 
-    }
+
     console.log(requestObject);
     return requestObject;
 })
@@ -43,15 +45,22 @@ export const apiService = {
     saveUser: async (firstUserInfo: IUserModel): Promise<string> => {
         let response = await axiosInstance.post<IUserResponseRegistrModel>('users', firstUserInfo);
         console.log(response.statusText);
-        return (response.statusText + ' #ID: ' + response.data.id) || "Your registration failed"
+        return (response.statusText + ' #ID: ' + response.data.id) || "Your registration failed";
     },
 
     authUser: (authUserInfo: IUserModel): Promise<AxiosResponse<IUserResponseAuthModel>> => {
-        return axiosInstance.post('auth', authUserInfo)
+        return axiosInstance.post('auth', authUserInfo);
     },
 
     getCars: async (): Promise<ICarsPaginated> => {
         let response = await axiosInstance.get<ICarsPaginated>('cars');
         return response.data;
     },
+
+
+    refresh: (): Promise<AxiosResponse<IUserResponseAuthModel>> => {
+        let refreshToken = typingHelpEmptyStringLocalStorage<IUserResponseAuthModel>('tokenPair').refresh;
+        return axiosInstance.post('auth/refresh', {refresh: refreshToken});
+    },
+
 }

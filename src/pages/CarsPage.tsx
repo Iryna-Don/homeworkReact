@@ -4,8 +4,11 @@ import {apiService} from "../services/api.service";
 import CarsComponent from "../components/CarsComponent";
 import {AxiosError} from "axios";
 import {ICarsPaginated} from "../models/ICarsPaginated";
+import {useNavigate} from "react-router-dom";
 
 const CarsPage = () => {
+    const [tokens, setTokens] = useState<string>('');
+    let navigate = useNavigate();
     const [carsPagination, setCarsPagination] = useState<ICarsPaginated>({
         total_items: 0,
         total_pages: 0,
@@ -14,7 +17,7 @@ const CarsPage = () => {
         items: [],
     })
     // const [cars, setCars] = useState<ICarWithAuth[]>([]);
-    const [error, setError] = useState<string>('');
+    // const [error, setError] = useState<string>('');
     useEffect(() => {
         apiService
             .getCars()
@@ -27,16 +30,33 @@ const CarsPage = () => {
                     console.log("No Server Response");
                 }
                 if (error && error?.response?.status === 401) {
-                    setError('ERROR! Unauthorized. ' + error.message);
+                    // setError('ERROR! Unauthorized. ' + error.message);
+
+                    apiService
+                        .refresh()
+                        .then(({data}) => {
+                            console.log(data);
+                            localStorage.setItem('tokenPair', JSON.stringify(data));
+                            setTokens(data.toString());
+                        })
+                        // localStorage.setItem('tokenAccess', data.access);
+                        // localStorage.setItem('tokenRefresh', data.refresh);
+
+                        .catch((error: AxiosError) => {
+                                if (error && error?.response?.status === 401) {
+                                    return navigate('/');
+                                }
+                            }
+                        )
                 }
             })
-    }, [])
+    }, [tokens])
 
     return (
         <div>
-            <p style={{color: "red"}}>{error}</p>
+            {/*<p style={{color: "red"}}>{error}</p>*/}
             {/*<CarsComponent allCars={cars}/>*/}
-        {/*    ========================================== or ===================================================*/}
+            {/*    ========================================== or ===================================================*/}
             <CarsComponent allCars={carsPagination.items}/>
 
         </div>
