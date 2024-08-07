@@ -1,35 +1,13 @@
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import MainLayout from "./layouts/MainLayout";
-import ErrorPage from "./pages/ErrorPage";
-import AuthorizationPage from "./pages/AuthorizationPage";
-import RegistrationPage from "./pages/RegistrationPage";
-import CarsPage from "./pages/CarsPage";
+import {RouterProvider} from "react-router-dom";
+import {browserRouter} from "./routers/routes";
+
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
-let browserRouter = createBrowserRouter([
-    {
-        path: '/',
-        element: <MainLayout/>,
-        errorElement: <ErrorPage/>,
-        children: [
-            {
-                index: true, element: <AuthorizationPage/>
-            },
-            {
-                path: 'users', element: <RegistrationPage/>
-            },
-            {
-                path: 'cars', element: <CarsPage/>
-            },
-        ]
-    }
-]);
-
 root.render(
     <RouterProvider router={browserRouter}/>
 );

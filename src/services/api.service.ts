@@ -52,8 +52,8 @@ export const apiService = {
         return axiosInstance.post('auth', authUserInfo);
     },
 
-    getCars: async (): Promise<ICarsPaginated> => {
-        let response = await axiosInstance.get<ICarsPaginated>('cars');
+    getCars: async (page: string = '1'): Promise<ICarsPaginated> => {
+        let response = await axiosInstance.get<ICarsPaginated>('cars', {params: {page}});
         return response.data;
     },
 

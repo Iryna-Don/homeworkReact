@@ -14,7 +14,7 @@ code {
 
 .withoutDecoration {
     text-decoration: none;
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: bold;
     color: cadetblue;
 }
@@ -62,7 +62,7 @@ code {
 
 .activeLink {
     text-decoration: none;
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: bold;
     text-shadow: 4px 4px 9px rgba(0,0,0,0.6);
     color: darkblue;
