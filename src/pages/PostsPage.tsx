@@ -4,7 +4,6 @@ import PostsComponent from "../components/PostsComponent";
 const PostsPage = () => {
     return (
         <div>
-            Posts Page
             <PostsComponent/>
         </div>
     );

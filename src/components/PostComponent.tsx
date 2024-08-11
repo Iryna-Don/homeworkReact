@@ -1,9 +1,14 @@
-import React from 'react';
-
-const PostComponent = () => {
+import React, {FC} from 'react';
+import {IPostModel} from "../models/IPostModel";
+interface IProps{
+    post:IPostModel;
+}
+const PostComponent:FC<IProps> = ({post:{id, title, body, userId }}) => {
     return (
         <div>
-            Post Component
+            #{id} - Title: {title}
+            <div>{body}</div>
+            <p>User ID: {userId}</p>
         </div>
     );
 };

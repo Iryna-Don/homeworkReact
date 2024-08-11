@@ -4,7 +4,6 @@ import UsersComponent from "../components/UsersComponent";
 const UsersPage = () => {
     return (
         <div>
-            Users Page
             <UsersComponent/>
         </div>
     );

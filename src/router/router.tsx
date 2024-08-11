@@ -1,9 +1,9 @@
 import {createBrowserRouter} from "react-router-dom";
 import BaseLayout from "../layouts/BaseLayout";
 import UsersPage from "../pages/UsersPage";
-import UserWithPostsPage from "../pages/UserWithPostsPage";
+import UsersWithPostsPage from "../pages/UsersWithPostsPage";
 import PostsPage from "../pages/PostsPage";
-import PostWithCommentsPage from "../pages/PostWithCommentsPage";
+import PostsWithCommentsPage from "../pages/PostsWithCommentsPage";
 import CommentsPage from "../pages/CommentsPage";
 import ErrorPage from "../pages/ErrorPage";
 import HomePage from "../pages/HomePage";
@@ -17,13 +17,13 @@ const routers = [{
             path: 'users', element: <UsersPage/>
         },
         {
-            path: 'userWithPosts', element: <UserWithPostsPage/>
+            path: 'usersWithPosts', element: <UsersWithPostsPage/>
         },
         {
             path: 'posts', element: <PostsPage/>
         },
         {
-            path: 'postWithComments', element: <PostWithCommentsPage/>
+            path: 'postsWithComments', element: <PostsWithCommentsPage/>
         },
         {
             path: 'comments', element: <CommentsPage/>
