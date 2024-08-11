@@ -5,9 +5,14 @@ import UserWithPostsPage from "../pages/UserWithPostsPage";
 import PostsPage from "../pages/PostsPage";
 import PostWithCommentsPage from "../pages/PostWithCommentsPage";
 import CommentsPage from "../pages/CommentsPage";
+import ErrorPage from "../pages/ErrorPage";
+import HomePage from "../pages/HomePage";
 
 const routers = [{
-    path: '', element: <BaseLayout/>, children: [
+    path: '', element: <BaseLayout/>, errorElement: <ErrorPage/>, children: [
+        {
+            index: true, element: <HomePage/>
+        },
         {
             path: 'users', element: <UsersPage/>
         },
