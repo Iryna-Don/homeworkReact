@@ -1,11 +1,10 @@
 import React from 'react';
-import MenuComponent from "./MenuComponent";
+import NavComponent from "./NavComponent";
 
 const HeaderComponent = () => {
     return (
         <div>
-            Header Component
-            <MenuComponent/>
+            <NavComponent/>
         </div>
     );
 };

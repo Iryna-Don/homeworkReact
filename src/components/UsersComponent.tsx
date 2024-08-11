@@ -4,9 +4,10 @@ import UserComponent from "./UserComponent";
 
 const UsersComponent = () => {
     const {userStore: {allUsers}} = useMyContextProvider();
+
     return (
         <div>
-            {allUsers.map(user=><UserComponent key={user.id} user={user}></UserComponent>)}
+            {allUsers.map(user => <UserComponent key={user.id} user={user}/>)}
         </div>
     );
 };

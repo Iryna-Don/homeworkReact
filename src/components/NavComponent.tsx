@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink, useNavigate} from "react-router-dom";
 
-const MenuComponent = () => {
+const NavComponent = () => {
 
     // let navigate = useNavigate();
 
@@ -12,6 +12,7 @@ const MenuComponent = () => {
             {/*<button onClick={() => navigate('/posts')}>Posts</button>*/}
             {/*<button onClick={() => navigate('/postWithComments')}>Post With Comments</button>*/}
             {/*<button onClick={() => navigate('/comments')}>Comments</button>*/}
+            <NavLink to={'/'}>Home</NavLink>
             <NavLink to={'users'}>Users</NavLink>
             <NavLink to={'usersWithPosts'}>Users With Posts</NavLink>
             <NavLink to={'posts'}>Posts</NavLink>
@@ -21,4 +22,4 @@ const MenuComponent = () => {
     );
 };
 
-export default MenuComponent;
+export default NavComponent;

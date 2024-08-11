@@ -5,6 +5,7 @@ import {ICommentModel} from "./ICommentModel";
 export type StoreType = {
     userStore: {
         allUsers: IUserModel[],
+        toFavourite: (obj:IUserModel)=>void,
     },
     postStore: {
         allPosts: IPostModel[],

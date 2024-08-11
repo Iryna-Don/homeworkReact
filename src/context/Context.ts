@@ -4,6 +4,7 @@ import {createContext, useContext} from "react";
 const context: StoreType = {
     userStore: {
         allUsers: [],
+        toFavourite: ()=>{},
     },
     postStore: {
         allPosts: [],
