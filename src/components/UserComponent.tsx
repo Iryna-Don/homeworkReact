@@ -9,14 +9,14 @@ interface IProps {
 const UserComponent: FC<IProps> = ({user}) => {
     const {userStore: {toFavourite}} = useMyContextProvider();
     const [toggle, setToggle] = useState<boolean>(false);
-    return (
-        <div>
-            {user.id} - {user.name} - {user.username} - {user.email}
-            <button disabled={toggle} onClick={() => {
-                toFavourite(user);
-                setToggle(!toggle)
-            }}>To Favourite
-            </button>
+            return (
+            <div>
+                {user.id} - {user.name} - {user.username} - {user.email}
+                <button disabled={toggle} onClick={() => {
+                    toFavourite(user);
+                    setToggle(!toggle);
+                }}>To Favourite
+                </button>
         </div>
     );
 };
