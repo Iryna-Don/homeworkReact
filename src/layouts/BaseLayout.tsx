@@ -3,7 +3,7 @@ import {Outlet} from "react-router-dom";
 import HeaderComponent from "../components/HeaderComponent";
 import FooterComponent from "../components/FooterComponent";
 import {commentService, postService, userService} from "../services/apiService";
-import {MyContext, useMyContextProvider} from "../context/Context";
+import {MyContext} from "../context/Context";
 import {IUserModel} from "../models/IUserModel";
 import {IPostModel} from "../models/IPostModel";
 import {ICommentModel} from "../models/ICommentModel";
@@ -31,7 +31,7 @@ const BaseLayout = () => {
                 {
                     userStore: {
                         allUsers: users,
-                        toFavourite: (obj: IUserModel) => {
+                        toFavourite: (obj:IUserModel)=>{
                             lift(obj);
                         },
                     },
@@ -44,7 +44,7 @@ const BaseLayout = () => {
                 }
             }>
                 <HeaderComponent/>
-                <SideBar favouriteArr={favouriteArr}/>
+                <SideBar favouriteArr = {favouriteArr}/>
                 <Outlet/>
                 <FooterComponent/>
             </MyContext.Provider>
