@@ -1,9 +1,9 @@
 import React from 'react';
-import {useMyContextProvider} from "../context/Context";
 import PostComponent from "./PostComponent";
+import {useStore} from "../store/store";
 
 const PostsComponent = () => {
-    const {postStore: {allPosts}} = useMyContextProvider();
+    const {postStore:{allPosts}} = useStore();
     return (
         <div>
             {

@@ -2,16 +2,16 @@ import React, {FC} from 'react';
 import {IUserModel} from "../models/IUserModel";
 
 interface IProps {
-    favouriteArr: IUserModel[],
+    favUser: IUserModel | null,
     children?:string,
 }
 
-const SideBar: FC<IProps> = ({favouriteArr}) => {
+const SideBar: FC<IProps> = ({favUser}) => {
     return (
         <div>
-            {
-                favouriteArr.map(item => <div key={item.id}>{item.username}</div>)
-            }
+            <hr/>
+            {favUser?.name}
+            <hr/>
         </div>
     );
 };
